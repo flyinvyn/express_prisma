@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// make a table
+model Product{
+  id Int @id @default(autoincrement())
+  name String
+  price Int
+  stock Int
+}
+
+// update library internal
+// npx prisma generate
+
+// untuk mengintegrasikan schema ke database
+// npx prisma db push
+
+// untuk menjalankan prisma studio
+// npm prisma studio
